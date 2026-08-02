@@ -1,5 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+html {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--color-cream);
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+}
 :root {
   font-family: "Manrope", sans-serif;
   color: #2c2a26;
@@ -2869,5 +2904,21 @@ a.footer-contact-link:hover {
 
   .footer-back-to-top {
     justify-content: flex-start;
+  }
+}
+.site-container {
+  width: min(100% - 40px, 1400px);
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  .site-container {
+    width: calc(100% - 32px);
+  }
+}
+
+@media (max-width: 480px) {
+  .site-container {
+    width: calc(100% - 24px);
   }
 }
