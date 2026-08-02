@@ -121,16 +121,49 @@ function ContactSection() {
 
             <form
               className="contact-form"
-              action={`mailto:${contactEmail}`}
-              method="post"
-              encType="text/plain"
+              action={`https://formsubmit.co/${contactEmail}`}
+              method="POST"
             >
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Pure Glow Floral Inquiry"
+              />
+
+              <input
+                type="hidden"
+                name="_template"
+                value="table"
+              />
+
+              <input
+                type="hidden"
+                name="_captcha"
+                value="false"
+              />
+
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Thank you for contacting Pure Glow Floral. We received your inquiry and will respond as soon as possible."
+              />
+
+              <input
+                type="text"
+                name="_honey"
+                tabIndex="-1"
+                autoComplete="off"
+                className="contact-honeypot"
+                aria-hidden="true"
+              />
+
               <div className="contact-form-row">
                 <label>
                   <span>Name</span>
+
                   <input
                     type="text"
-                    name="name"
+                    name="Name"
                     placeholder="Your full name"
                     autoComplete="name"
                     required
@@ -139,9 +172,10 @@ function ContactSection() {
 
                 <label>
                   <span>Email</span>
+
                   <input
                     type="email"
-                    name="email"
+                    name="Email"
                     placeholder="you@example.com"
                     autoComplete="email"
                     required
@@ -150,9 +184,20 @@ function ContactSection() {
               </div>
 
               <label>
+                <span>Phone Number</span>
+
+                <input
+                  type="tel"
+                  name="Phone"
+                  placeholder="Your phone number"
+                  autoComplete="tel"
+                />
+              </label>
+
+              <label>
                 <span>Inquiry Type</span>
 
-                <select name="inquiryType" defaultValue="" required>
+                <select name="Inquiry Type" defaultValue="" required>
                   <option value="" disabled>
                     Select an inquiry type
                   </option>
@@ -184,7 +229,7 @@ function ContactSection() {
 
                 <input
                   type="text"
-                  name="timeline"
+                  name="Event Date or Timeline"
                   placeholder="Month, date, or expected timeframe"
                 />
               </label>
@@ -193,7 +238,7 @@ function ContactSection() {
                 <span>Message</span>
 
                 <textarea
-                  name="message"
+                  name="Message"
                   rows="6"
                   placeholder="Share the event, order details, floral vision, or partnership opportunity."
                   required
